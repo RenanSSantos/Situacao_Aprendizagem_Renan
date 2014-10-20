@@ -6,7 +6,7 @@
 Exemplo diadtico de utilização de  media queries
 */
 
-body{background-color: deepskyblue;}
+
 
 @media screen and (orientation: portrait ){
     /*Modo retrato - vertical    */
