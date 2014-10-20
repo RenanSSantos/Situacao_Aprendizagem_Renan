@@ -1,0 +1,21 @@
+
+/* 
+    Created on : 20/10/2014, 15:59:21
+    Author     : Renan da Silva Santos
+
+Exemplo diadtico de utilização de  media queries
+*/
+
+body{background-color: deepskyblue;}
+
+@media screen and (orientation: portrait ){
+    /*Modo retrato - vertical    */
+    .horizontal{display:none;}
+    .vertical{display: block;}
+}
+
+@media screen and (orientation: landscape ){
+    /*Modo paisagem - horizontal */
+    .horizontal{display:block;}
+    .vertical{display: none;}
+}
