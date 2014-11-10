@@ -48,10 +48,16 @@ class Usuarios extends CI_Controller {
             /* Recebe os dados do formulário (visão) */
             $data['nome'] = $this->input->post('nome');
             $data['email'] = $this->input->post('email');
-            
-            /**
-             * TODO: Deve colocar mais campos!!!
-             */
+            $data['senha'] = $this->input->post('senha');
+            $data['sexo'] = $this->input->post('sexo');
+            $data['endereco'] = $this->input->post('endereco');
+            $data['cidade'] = $this->input->post('cidade');
+            $data['estado'] = $this->input->post('estado');
+            $data['cep'] = $this->input->post('cep');
+            $data['foto'] = $this->input->post('foto');
+
+            // TODO: Deve colocar mais campos!!!
+
 
             /* Carrega o modelo */
             //$this->load->model('pessoas_model');
@@ -113,11 +119,17 @@ class Usuarios extends CI_Controller {
             $data['idusuario'] = $this->input->post('idusuario');
             $data['nome'] = ucwords($this->input->post('nome'));
             $data['email'] = strtolower($this->input->post('email'));
+            $data['senha'] = $this->input->post('senha');
+            $data['sexo'] = $this->input->post('sexo');
+            $data['endereco'] = $this->input->post('endereco');
+            $data['cidade'] = $this->input->post('cidade');
+            $data['estado'] = $this->input->post('estado');
+            $data['cep'] = $this->input->post('cep');
+            $data['foto'] = $this->input->post('foto');
 
             /**
              * TODO: Colocar mais campos
              */
-            
             /* Carrega o modelo */
             //$this->load->model('pessoas_model');
 

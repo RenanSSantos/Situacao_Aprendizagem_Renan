@@ -16,7 +16,9 @@ class Usuarios_model extends CI_Model {
 
     function listar() {
         //Listagem da tabela usuário
-        $query = $this->db->get('usuario');
+        $query = $this->db
+                ->order_by('nome','asc')
+                ->get('usuario');
         return $query->result();
     }
 
