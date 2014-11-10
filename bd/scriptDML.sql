@@ -3,10 +3,10 @@
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `sitap`;
-INSERT INTO `sitap`.`usuario` (`idusuario`, `nome`, `email`, `senha`, `sexo`, `cidade`, `estado`, `endereco`, `cep`, `foto`) VALUES (2, 'Gilberson Silva dos Santos', 'gilber@hotmail.com', '1234', 'M', 'Brusque', 'SC', 'Rua do Gilberson, 47', '88356-890', 'http://goo.gl/M45CIp');
-INSERT INTO `sitap`.`usuario` (`idusuario`, `nome`, `email`, `senha`, `sexo`, `cidade`, `estado`, `endereco`, `cep`, `foto`) VALUES (0, 'Anônimo', 'anonimo@anonimo.com.br', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `sitap`.`usuario` (`idusuario`, `nome`, `email`, `senha`, `sexo`, `cidade`, `estado`, `endereco`, `cep`, `foto`) VALUES (1, 'Admin', 'admin@admin.com.br', '1234', NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `sitap`.`usuario` (`idusuario`, `nome`, `email`, `senha`, `sexo`, `cidade`, `estado`, `endereco`, `cep`, `foto`) VALUES (3, 'Cacilda Paris Hilton', 'cacilda@gmail.com', '1234', 'F', 'Guabiruba', 'SC', 'Rua na Guabiruba, 74', '88301-805', 'http://goo.gl/b2tcaz');
+INSERT INTO `sitap`.`usuario` (`idusuario`, `nome`, `email`, `senha`, `sexo`, `cidade`, `estado`, `endereco`, `cep`, `foto`) VALUES (2, 'Gilberson Silva dos Santos', 'gilber@hotmail.com', '1234', 'M', 'Brusque', 'SC', 'Rua do Gilberson, 47', '88356-890', 'gilberson.png');
+INSERT INTO `sitap`.`usuario` (`idusuario`, `nome`, `email`, `senha`, `sexo`, `cidade`, `estado`, `endereco`, `cep`, `foto`) VALUES (0, 'Anônimo', 'anonimo@anonimo.com.br', NULL, NULL, NULL, NULL, NULL, NULL, 'ciclops.png');
+INSERT INTO `sitap`.`usuario` (`idusuario`, `nome`, `email`, `senha`, `sexo`, `cidade`, `estado`, `endereco`, `cep`, `foto`) VALUES (1, 'Admin', 'admin@admin.com.br', '1234', NULL, NULL, NULL, NULL, NULL,'ciclops.png' );
+INSERT INTO `sitap`.`usuario` (`idusuario`, `nome`, `email`, `senha`, `sexo`, `cidade`, `estado`, `endereco`, `cep`, `foto`) VALUES (3, 'Cacilda Paris Hilton', 'cacilda@gmail.com', '1234', 'F', 'Guabiruba', 'SC', 'Rua na Guabiruba, 74', '88301-805', 'cacilda.png');
 
 COMMIT;
 
@@ -27,7 +27,9 @@ START TRANSACTION;
 USE `sitap`;
 INSERT INTO `sitap`.`comentario` (`idcomentario`, `idusuario`, `idartigo`, `corpo`, `data`) VALUES (1, 0, 1, 'Alo ha isso é um comentário do anônimo', '2014-10-27 16:48:15');
 INSERT INTO `sitap`.`comentario` (`idcomentario`, `idusuario`, `idartigo`, `corpo`, `data`) VALUES (2, 3, 1, 'Alo ha Cacilda aqui', '2014-10-28 8:56:15');
+Rodízio e Promoções toda Segunda-feira
 
+© Copyright 2014 Tsurus Sushi Bar - 
 COMMIT;
 
 -- -----------------------------------------------------
