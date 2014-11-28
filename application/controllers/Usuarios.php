@@ -19,7 +19,7 @@ class Usuarios extends CI_Controller {
 //        $this->load->view('usuarios_view.php', $data);
 
         $this->load->view('home_header');
-        $this->load->view('home_content_usuario',$data);
+        $this->load->view('home_content_usuario', $data);
         $this->load->view('home_sidebar');
     }
 
@@ -63,11 +63,8 @@ class Usuarios extends CI_Controller {
             $data['cidade'] = $this->input->post('cidade');
             $data['estado'] = $this->input->post('estado');
             $data['cep'] = $this->input->post('cep');
-            $data['foto'] = $this->input->post('foto');
+            $data['foto'] = $this->do_upload();
 
-            /**
-             * TODO: Deve colocar mais campos!!!
-             */
             /* Carrega o modelo */
             //$this->load->model('pessoas_model');
 
@@ -79,9 +76,56 @@ class Usuarios extends CI_Controller {
             }
         }
     }
+    
+        function do_upload() {
+        /**
+             * Envio da imagem!
+             */
+            $config['upload_path'] = './assets/images/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = '110';
+            $config['max_width'] = '1024';
+            $config['max_height'] = '768';
+
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload()) {
+                $error = array('error' => $this->upload->display_errors());
+
+                /**echo "[DEBUG]: Deu ruim total"; 
+                echo "<pre>";
+                echo "ERROR:";
+                var_dump($error);
+                var_dump($data);
+                echo "</pre>";
+                 * 
+                 */
+                //die();
+                
+                //$this->load->view('upload_form', $error);
+                
+                //$this->load->view('home_header');
+                //$this->load->view('home_content_usuario', $data);
+                //$this->load->view('home_sidebar');
+               
+                //Arquivo inválido
+                //echo "Cheguei aqui Arquivo inválido!"; die();
+                return false;
+                
+            } else {//Arquivo enviado!
+                
+                //$data = array('upload_data' => $this->upload->data());
+                //$this->load->view('upload_success', $data);
+                
+                $foto = $this->upload->data();
+                //var_dump($foto); die();
+                return $foto['file_name'];
+            }
+            //Fim do envio da imagem
+    }
 
     function editar($idusuario) {
-        
+
         /* Aqui vamos definir o título da página de edição */
         //$data['titulo'] = "CRUD com CodeIgniter | Editar Usuário";
 
@@ -93,7 +137,7 @@ class Usuarios extends CI_Controller {
 
         /* Carrega a página de edição com os dados da pessoa */
         $this->load->view('home_header');
-        $this->load->view('home_content_usuario_edit',$data);
+        $this->load->view('home_content_usuario_edit', $data);
         $this->load->view('home_sidebar');
     }
 
@@ -136,7 +180,12 @@ class Usuarios extends CI_Controller {
             $data['cidade'] = $this->input->post('cidade');
             $data['estado'] = $this->input->post('estado');
             $data['cep'] = $this->input->post('cep');
-            $data['foto'] = $this->input->post('foto');
+            //$data['foto'] = $this->input->post('foto');
+            
+            if($this->do_upload())
+                $data['foto'] = $this->do_upload ();
+            
+           
 
             /**
              * TODO: Colocar mais campos

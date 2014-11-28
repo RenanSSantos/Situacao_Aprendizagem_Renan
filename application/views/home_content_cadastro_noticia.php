@@ -10,10 +10,12 @@
                         if they get too long. You can also remove the <p> entirely if you don't
                         need a subtitle.
                 -->
-                <h2><a href="#">Alteração de Cadastro de Usuário</a></h2>
+                <h2><a href="#">Cadastro de Notícia</a></h2>
                <!-- <p>A free, fully responsive HTML5 site template by HTML5 UP</p> -->
             </header>
             <div class="info">
+                <p>Abaixo vai o formulário de cadastro de notícia</p>
+                <p><a href="<?= base_url('login/sair') ?>">Sair</a></p>
                 <!--
                         Note: The date should be formatted exactly as it's shown below. In particular, the
                         "least significant" characters of the month should be encapsulated in a <span>
@@ -36,51 +38,20 @@
                 -->
             </div><!-- info -->
 
-            <?php echo form_open_multipart('usuarios/atualizar', 'id="form-pessoas"'); ?>
+            <?php echo form_open('login', 'id="form-login"'); ?>
 
-            <input type="hidden" name="idusuario" value="<?php echo $dados_usuario[0]->idusuario; ?>"/>
-
-            <label for="nome">Nome:</label><br/>
-            <input type="text" name="nome" value="<?php echo $dados_usuario[0]->nome; ?>"/>
-            <div class="error"><?php echo form_error('nome'); ?></div>
-
-            <label for="email">Email:</label><br/>
-            <input type="text" name="email" value="<?php echo $dados_usuario[0]->email; ?>"/>
+            <label for="email">E-mail:</label><br/>
+            <input type="text" name="email" value="<?php echo set_value('email'); ?>"/>
             <div class="error"><?php echo form_error('email'); ?></div>
 
             <label for="senha">Senha:</label><br/>
-            <input type="text" name="senha" value="<?php echo $dados_usuario[0]->senha; ?>"/>
+            <input type="password" name="senha" value="<?php echo set_value('senha'); ?>"/>
             <div class="error"><?php echo form_error('senha'); ?></div>
-
-            <label for="sexo">Sexo:</label><br/>
-            <input type="text" name="sexo" value="<?php echo $dados_usuario[0]->sexo; ?>"/>
-            <div class="error"><?php echo form_error('sexo'); ?></div>
-
-            <label for="endereco">Endereço:</label><br/>
-            <input type="text" name="endereco" value="<?php echo $dados_usuario[0]->endereco; ?>"/>
-            <div class="error"><?php echo form_error('endereco'); ?></div>
-
-            <label for="cidade">Cidade:</label><br/>
-            <input type="text" name="cidade" value="<?php echo $dados_usuario[0]->cidade; ?>"/>
-            <div class="error"><?php echo form_error('cidade'); ?></div>
-
-            <label for="estado">Estado:</label><br/>
-            <input type="text" name="estado" value="<?php echo $dados_usuario[0]->estado; ?>"/>
-            <div class="error"><?php echo form_error('estado'); ?></div>
-
-            <label for="cep">CEP:</label><br/>
-            <input type="text" name="cep" value="<?php echo $dados_usuario[0]->cep; ?>"/>
-            <div class="error"><?php echo form_error('cep'); ?></div>
-
-            <label for="foto">Foto:</label><br/>
-            <input type="file" name="userfile" value=""/>
-            <div class="error"><?php echo form_error('foto'); ?></div>
-            
-            <img src="<?php echo base_url("assets/images/" . $dados_usuario[0]->foto); ?>" />
-
-            <input type="submit" name="atualizar" value="Atualizar" />
+                    
+            <input type="submit" name="login" value="Login" />
 
             <?php echo form_close(); ?>
+            
 
         </article>
 

@@ -36,7 +36,7 @@
                 -->
             </div><!-- info -->
 
-            <?php echo form_open('usuarios/inserir', 'id="form-pessoas"'); ?>
+            <?php echo form_open_multipart('usuarios/inserir', 'id="form-pessoas"'); ?>
 
             <label for="nome">Nome:</label><br/>
             <input type="text" name="nome" value="<?php echo set_value('nome'); ?>"/>
@@ -71,7 +71,7 @@
             <div class="error"><?php echo form_error('cep'); ?></div>
 
             <label for="foto">Foto:</label><br/>
-            <input type="text" name="foto" value="<?php echo set_value('foto'); ?>"/>
+            <input type="file" name="userfile" value="<?php echo set_value('foto'); ?>"/>
             <div class="error"><?php echo form_error('foto'); ?></div>
 
             <input type="submit" name="cadastrar" value="Cadastrar" />
